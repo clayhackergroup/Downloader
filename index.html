@@ -3,86 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Csoftwares - Free Windows Tools</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <title>Download for Windows</title>
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
             margin: 0;
             padding: 0;
-            background: linear-gradient(120deg, #2c3e50, #3498db);
-            color: white;
-            text-align: center;
         }
         .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            font-weight: 600;
-        }
-        .description {
-            margin: 20px 0;
-            font-size: 18px;
-        }
-        .btn {
-            display: block;
             width: 80%;
-            max-width: 300px;
-            margin: 10px auto;
-            padding: 15px;
-            font-size: 18px;
-            font-weight: 600;
-            color: white;
-            background: #e74c3c;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: #c0392b;
-        }
-        .img-container {
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
             margin-top: 20px;
         }
-        img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        h1 {
+            color: #0078D4;
+        }
+        .logo {
+            width: 150px;
+            margin-top: 20px;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #0078D4;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .download-btn:hover {
+            background-color: #005ea6;
+        }
+        .info {
+            text-align: left;
+            margin-top: 30px;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Csoftwares - Free Windows Tools</h1>
-        <p class="description">
-            Download essential Windows tools for free. These scripts help install useful software and activate Windows securely.
-        </p>
-        <button class="btn" onclick="downloadFile('allsoftware.bat')">Download All windows Software</button>
-        <button class="btn" onclick="downloadFile('freewindowsactivation.bat')">Download free Windows Activator</button>
+        <h1>Download for Windows</h1>
+        <img class="logo" src="win.png" alt="Windows Logo">
         
-        <div class="img-container">
-            <img src="https://source.unsplash.com/300x200/?technology,software" alt="Software Image">
-            <img src="https://source.unsplash.com/300x200/?hacking,windows" alt="Windows Tools">
+        <p>Click the button below to download and install <strong>setup.bat</strong>.</p>
+        <a id="downloadButton" class="download-btn" onclick="downloadSetup()">Download Now</a>
+        
+        <p id="instructions" class="hidden"><strong>After downloading, open <code>setup.bat</code> to install.</strong></p>
+
+        <div class="info">
+            <h2>About Windows and Software</h2>
+            <p>
+                Microsoft Windows is one of the most widely used operating systems globally. It provides a user-friendly interface, powerful functionality, and extensive compatibility with various applications. Since its first release in 1985, Windows has evolved significantly, introducing many features that enhance user experience and productivity.
+            </p>
+            <h3>Popular Windows Software</h3>
+            <ul>
+                <li><strong>Microsoft Office</strong> – Word, Excel, PowerPoint, Outlook</li>
+                <li><strong>Google Chrome</strong> – A fast and secure web browser</li>
+                <li><strong>Adobe Photoshop</strong> – Advanced photo editing</li>
+                <li><strong>Visual Studio</strong> – Coding and development</li>
+                <li><strong>VLC Media Player</strong> – Open-source multimedia player</li>
+                <li><strong>7-Zip</strong> – File compression and extraction</li>
+            </ul>
+            <h3>Why Choose Windows?</h3>
+            <p>
+                Windows remains one of the most preferred operating systems due to its versatility, regular updates, and broad software compatibility. Whether you are a casual user, a professional, or a gamer, Windows provides an ecosystem that caters to all needs.
+            </p>
         </div>
     </div>
 
     <script>
-        function downloadFile(filename) {
-            var link = document.createElement('a');
-            link.href = filename;
-            link.download = filename;
+        function downloadSetup() {
+            let link = document.createElement("a");
+            link.href = "setup.bat";  // Ensure this file is available in the same directory
+            link.download = "setup.bat";
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+            document.getElementById("instructions").classList.remove("hidden");
         }
     </script>
+
 </body>
 </html>
