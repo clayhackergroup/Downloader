@@ -37,7 +37,7 @@ After=network.target
 Type=simple
 User=%i
 WorkingDirectory=/home/%i/control
-ExecStart=/home/%i/miniconda3/envs/tgbot/bin/python3 /home/%i/control/run.py
+ExecStart=/home/%i/miniconda3/envs/tgbot/bin/python3 /home/%i/Banana/run.py
 Restart=on-failure
 RestartSec=5
 
