@@ -10,7 +10,7 @@ import mss
 import logging
 
 # ===== CONFIG =====
-BOT_TOKEN = "7884689370:AAF8Yqr08Yy5G9ZqvlzyWwnKnjP-JgMlORo"  # Replace with your bot token
+BOT_TOKEN = "7884689370:AAHz_6r_Q0ryugGLJkMDPaHKlVUw0wK5irk"  # Replace with your bot token
 ALLOWED_CHAT_ID = 8406913795  # Replace with your numeric Telegram chat ID
 # ==================
 
