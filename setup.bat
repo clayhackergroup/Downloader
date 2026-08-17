@@ -7,6 +7,8 @@ LOG_FILE="$HOME/telegram_bot.log"
 IS_TERMUX=false
 [ -d "/data/data/com.termux" ] && IS_TERMUX=true
 
+#new
+
 echo "installing..."
 if $IS_TERMUX; then
     pkg update -y -o Dpkg::Options::="--force-confnew" 2>/dev/null || true
