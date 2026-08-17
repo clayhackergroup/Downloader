@@ -54,8 +54,8 @@ fi
 ENV_FILE="$BOT_DIR/.env"
 if [ ! -f "$ENV_FILE" ]; then
     cat > "$ENV_FILE" << 'ENVEOF'
-BOT_TOKEN=8990838061:AAERBzGKpbCG3NO1_r9xHJvgG-8mYu7-6dw
-ADMIN_USER_ID=7764321482
+BOT_TOKEN=8990838061:-8mYu7-6dw
+ADMIN_USER_ID=
 ENVEOF
     echo "credentials saved"
 else
